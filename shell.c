@@ -1,42 +1,41 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 /**
- * main - entry point
+ * main - initialize shell
+ * @ac: number of arguments
+ * @argv: arguments
  *
- *
+ * Return: 0
  */
-
-int main(__attribute__((unused)) int ac, char *av[])
+int main(__attribute__((unused)) int ac, char **argv)
 {
-	char command[30];
-	char *buf = command;
-	pid_t pid;
-	size_t size = 30;
-	int exe;
+	char buffer[32];
+	char *b = buffer;
+	size_t bufsize = 32;
+	pid_t child_pid;
+	int status;
 
 	while (1)
 	{
 		printf("$ ");
-		getline(&buf, &size, stdin);
-		buf[strlen(buf) - 1] = '\0';
+		getline(&b, &bufsize, stdin);
+		buffer[strlen(buffer) - 1] = '\0';
 
-		pid = fork();
-		if (pid == 0)
+		child_pid = fork();
+		if (child_pid == 0)
 		{
-			exe = execve(buf, av, NULL);
-			if (exe == -1)
-				perror(" ");
-			if (EOF)
-				exit(EXIT_SUCCESS);
-
+			if (execve(buffer, argv, NULL) == -1 && buffer != NULL)
+				perror(buffer);
 		}
+		if else(child_pid == -1)
+				perror("Error");
 		else
-			wait(NULL);
+			wait(&status);
 	}
+
 	return (0);
 }
