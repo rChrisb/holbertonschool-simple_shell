@@ -31,7 +31,7 @@ int main(__attribute__((unused)) int ac, char **argv)
 			if (execve(buffer, argv, NULL) == -1 && buffer != NULL)
 				perror(buffer);
 		}
-		if else(child_pid == -1)
+		else if (child_pid == -1)
 				perror("Error");
 		else
 			wait(&status);
