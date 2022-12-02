@@ -8,7 +8,7 @@
  *
  * Return:
 */
-char **split_line(char **argv)
+char **split_line(char *argv)
 {
 	int bufsize = 64, pos = 0;
 	char **tokens = malloc(sizeof(char *) * bufsize);
