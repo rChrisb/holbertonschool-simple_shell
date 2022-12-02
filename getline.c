@@ -7,9 +7,8 @@
 
 char *_getline(void)
 {
-	char command[50];
-	char *buf = command;
-	size_t n = 50;
+	char *buf = NULL;
+	ssize_t n = 0;
 	int val;
 
 	val = getline(&buf, &n, stdin);

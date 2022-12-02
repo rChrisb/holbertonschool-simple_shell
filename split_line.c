@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib>
+#include <stdlib.h>
 
 /**
  * split_line - split line in tokens
@@ -10,9 +10,9 @@
 */
 char **split_line(char *argv)
 {
-	int bufsize = 64, pos = 0;
+	int bufsize = 50, pos = 0;
 	char **tokens = malloc(sizeof(char *) * bufsize);
-	char *token
+	char *token;
 
 	token = strtok(argv, " ");
 	while(token != NULL)
