@@ -8,6 +8,26 @@
 #include <string.h>
 #include <sys/types.h>
 
+
+/**
+ * struct builtin - Structure for built-ins
+ * @command: command input
+ * @function: function to execute
+ *
+ */
+
+typedef struct builtin
+{
+	char *command;
+	int (*function)(void);
+} builtin;
+
+extern char **environ;
+int (*getfunc(char *s))(void);
+int _exitshell(void);
+int _printenv(void);
+
+
 void prompt(char p[10]);
 char *_getline(void);
 void exec(char *buf, char *av[]);
