@@ -1,9 +1,11 @@
-#include <sys/wait.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/types.h>
+#include "main.h"
+
+/**
+ * split_line - takes user input and tokenize it
+ * @buff: user input
+ *
+ * Return: tokenized user input
+ */
 
 char **split_line(char *buff)
 {
@@ -12,7 +14,7 @@ char **split_line(char *buff)
 	char *token;
 
 	token = strtok(buff, " ");
-	while(token != NULL)
+	while (token != NULL)
 	{
 		tokens[pos] = token;
 		pos++;
