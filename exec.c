@@ -1,9 +1,15 @@
-#include <sys/wait.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/types.h>
+#include "main.h"
+
+/**
+ * exec - excutes user input
+ * @buf: user input
+ * @av: tokens
+ *
+ */
+
+
+
+
 void exec(char *buf, char *av[])
 {
 	pid_t pid;
@@ -28,5 +34,5 @@ void exec(char *buf, char *av[])
 	}
 	else
 		wait(NULL);
-	
+
 }
