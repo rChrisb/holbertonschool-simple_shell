@@ -1,15 +1,13 @@
-#include <sys/wait.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/types.h>
+#include "main.h"
 
-void prompt(char p[6]);
-char * _getline(void);
-void exec(char *buf, char *av[]);
-char **split_line(char *buf);
-int main(__attribute__((unused)) int ac, char *av[])
+/**
+ * main - Entry point
+ * @ac: number of arguments in command line
+ * @av: values of arguments
+ *
+ * Return: 0
+ */
+int main(__attribute__((unused)) int ac, __attribute__((unused)) char *av[])
 {
 	char *buffer, **tokens;
 
@@ -18,6 +16,7 @@ int main(__attribute__((unused)) int ac, char *av[])
 	prompt("$£$ ");
 	buffer = _getline();
 	tokens = split_line(buffer);
+
 	exec(buffer, tokens);
 	}
 	return (0);

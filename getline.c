@@ -1,19 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <unistd.h>
-#include <string.h>
+#include "main.h"
+
+/**
+ * _getline - takes user input
+ *
+ * Return: user input
+ */
 
 char *_getline(void)
 {
 	char *buf = NULL;
-	ssize_t n = 0;
+	size_t n = 0;
 	int val;
 
 	val = getline(&buf, &n, stdin);
 	buf[strlen(buf) - 1] = '\0';
-	
+
 	if (val == -1)
 	{
 		free(buf);  /*getline autmoatically allocated memory for buf*/
