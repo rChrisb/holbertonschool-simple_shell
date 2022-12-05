@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- *
- *
- *
+ * execute - executes commands and bultins
+ * @buff: user input
+ * @env: global environment
  *
  */
 
@@ -16,7 +16,9 @@ void execute(char *buff, char **env)
 	{
 		exec(buff, tokens, env);
 		/*freetoken(tokens);*/
-		return;
+		/*return;*/
 	}
 	/*freetoken(tokens);*/
+
+	/*builtin*/
 }
