@@ -17,7 +17,10 @@ char *_getline(void)
 
 	if (val == -1)
 	{
-		free(buf);  /*getline autmoatically allocated memory for buf*/
+		if (feof(stdin))
+			exit(EXIT_SUCCESS);
+		if (buf)
+			free(buf);  /*getline autmoatically allocated memory for buf*/
 		exit(EXIT_FAILURE);
 	}
 	return (buf);

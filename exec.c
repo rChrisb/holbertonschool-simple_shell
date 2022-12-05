@@ -8,31 +8,43 @@
  */
 
 
-
-
-void exec(char *buf, char *av[])
+void exec(char *buf, char *av[], char **env)
 {
 	pid_t pid;
-	int x;
+	char *all = NULL, *path;
 
-	pid = fork();
-
-	if (pid == -1)
+	path = getenv("PATH");
+	if (((execve(buf, av, env)) == -1) && !path)
 	{
-		perror("Error");
+		perror("");
 		return;
 	}
-	if (pid == 0)
-	{
-		x = execve(buf, av, NULL);
-		if (x == -1)
-		{
-			perror("");
-			if (feof(stdin))
-				exit(EXIT_SUCCESS);
-		}
-	}
 	else
-		wait(NULL);
-
+	{
+		path = strdup(path);
+		all = searchpath(buf, path);
+		free(path);
+		pid = fork();
+		if (pid == -1)
+		{
+			perror("Error");
+			free(all);
+			return;
+		}
+		if (pid == 0)
+		{
+			if (execve(all, av, env) == -1)
+			{
+				perror("");
+				free(all);
+				if (feof(stdin))
+					exit(EXIT_SUCCESS);
+				/*return;*/
+			}
+		}
+		else
+			wait(NULL);
+	}
+	if (all)
+		free(all);
 }
