@@ -26,7 +26,7 @@ char **split_line(char *buff)
 }
 
 /**
- * freetokens - free arguments
+ * freetoken - free arguments
  * @tokens: arguments in user input
  *
  */
