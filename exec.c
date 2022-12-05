@@ -6,8 +6,6 @@
  * @av: tokens
  *
  */
-
-
 void exec(char *buf, char *av[], char **env)
 {
 	pid_t pid;

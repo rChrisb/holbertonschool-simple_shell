@@ -7,17 +7,17 @@
  *
  * Return: 0
  */
-int main(__attribute__((unused)) int ac, __attribute__((unused)) char *av[])
+int main(__attribute__((unused)) int ac, __attribute__((unused)) char *av[], char **env)
 {
-	char *buffer, **tokens;
+	char *buffer = NULL;
 
 	while (1)
 	{
 	prompt("$£$ ");
 	buffer = _getline();
-	tokens = split_line(buffer);
+	getfunc(buffer);
 
-	exec(buffer, tokens);
+	execute(buffer, env);
 	}
 	return (0);
 }
