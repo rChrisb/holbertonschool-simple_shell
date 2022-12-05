@@ -11,38 +11,31 @@ void exec(char *buf, char *av[], char **env)
 	pid_t pid;
 	char *all = NULL, *path;
 
+	pid = fork();
 	path = getenv("PATH");
-	if (((execve(buf, av, env)) == -1) && !path)
+
+	if (pid == -1)
 	{
-		perror("");
+		perror("Error");
 		return;
 	}
-	else
+	if (pid == 0)
 	{
 		path = strdup(path);
 		all = searchpath(buf, path);
-		free(path);
-		pid = fork();
-		if (pid == -1)
+		if (((execve(buf, av, env)) == -1) && !path)
 		{
-			perror("Error");
-			free(all);
+			perror("");
 			return;
 		}
-		if (pid == 0)
+		if (execve(all, av, NULL) == -1)
 		{
-			if (execve(all, av, env) == -1)
-			{
-				perror("");
-				free(all);
-				if (feof(stdin))
-					exit(EXIT_SUCCESS);
-				/*return;*/
-			}
+			perror("");
+			if (feof(stdin))
+				exit(EXIT_SUCCESS);
 		}
-		else
-			wait(NULL);
 	}
-	if (all)
-		free(all);
+	else
+		wait(NULL);
+
 }

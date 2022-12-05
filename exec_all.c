@@ -15,8 +15,5 @@ void execute(char *buff, char **env)
 	if (tokens[0])
 	{
 		exec(buff, tokens, env);
-		/*freetoken(tokens);*/
-		return;
 	}
-	/*freetoken(tokens);*/
 }
