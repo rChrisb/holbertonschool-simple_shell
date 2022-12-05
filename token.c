@@ -24,3 +24,23 @@ char **split_line(char *buff)
 
 	return (tokens);
 }
+
+/**
+ * freetokens - free arguments
+ * @tokens: arguments in user input
+ *
+ */
+
+void freetoken(char **tokens)
+{
+	int i;
+
+	if (tokens)
+	{
+		for (i = 0; tokens[i] != NULL; i++)
+		{
+			free(tokens[i]);
+		}
+		free(tokens);
+	}
+}
