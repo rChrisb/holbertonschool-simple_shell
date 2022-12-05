@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _exit - exit the new shell
+ * _exitshell - exit the new shell
  *
  * Return: exit code
  */
 
 int _exitshell(void)
 {
-	exit(100);
+	return (-2);
 }
 
 /**
