@@ -23,7 +23,8 @@ int main(int ac, char *av[], char **env)
 	while ((*buffer != '\0') && *buffer == ' ')
 		buffer++;
 
-	getfunc(buffer);
+	if ((strcmp(buffer, "exit") == 0) || (strcmp(buffer, "env") == 0))
+			getfunc(buffer);
 
 	execute(buffer, env);
 	}
