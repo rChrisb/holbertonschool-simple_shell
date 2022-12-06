@@ -16,8 +16,9 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char *av[], cha
 	{
 		prompt("$£$ ");
 		buffer = _getline();
-		/*getfunc(buffer);*/
+		getfunc(buffer);
 		execute(buffer, env);
+		free(buffer);
 	}
 	free(buffer);
 
