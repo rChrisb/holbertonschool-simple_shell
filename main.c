@@ -20,9 +20,13 @@ int main(int ac, char *av[], char **env)
 	prompt("$£$ ");
 	buffer = _getline();
 	/* tokens = split_line(buffer);*/
+	while ((*buffer != '\0') && *buffer == ' ')
+		buffer++;
+
 	getfunc(buffer);
 
 	execute(buffer, env);
 	}
+	free(buffer);
 	return (0);
 }
