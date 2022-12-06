@@ -23,6 +23,6 @@ char *_getline(void)
 		if (buf)
 			free(buf);  /*getline autmoatically allocated memory for buf*/
 		exit(EXIT_FAILURE);
-	}
+}
 	return (buf);
 }
