@@ -42,6 +42,7 @@ void exec(char *buf, char *av[], char **env)
 	}
 		else
 			wait(NULL);
-	if (all)
-		free(all);
+
+	/*if (all)
+		free(all);*/
 }
