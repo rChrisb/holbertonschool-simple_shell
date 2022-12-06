@@ -20,9 +20,14 @@ int main(int ac, char *av[], char **env)
 	prompt("$£$ ");
 	buffer = _getline();
 	/* tokens = split_line(buffer);*/
-	getfunc(buffer);
+	while ((*buffer != '\0') && *buffer == ' ')
+		buffer++;
+
+	if ((strcmp(buffer, "exit") == 0) || (strcmp(buffer, "env") == 0))
+			getfunc(buffer);
 
 	execute(buffer, env);
 	}
+	free(buffer);
 	return (0);
 }
