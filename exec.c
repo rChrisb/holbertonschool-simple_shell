@@ -34,14 +34,14 @@ void exec(char *buf, char *av[], char **env)
 		if (execve(all, av, env) == -1)
 		{
 			perror("");
-			/*free(all);*/
+			free(all);
 			if (feof(stdin))
 				exit(EXIT_SUCCESS);
-				/*return;*/
+			return;
 		}
 	}
 		else
 			wait(NULL);
-	/*if (all)*/
-		/*free(all);*/
+	if (all)
+		free(all);
 }
