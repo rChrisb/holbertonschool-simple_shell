@@ -17,6 +17,7 @@ void exec(char *buf, char *av[], char **env)
 	if (pid == -1)
 	{
 		perror("Error");
+		free(all);
 		return;
 	}
 	if (pid == 0)
@@ -26,16 +27,19 @@ void exec(char *buf, char *av[], char **env)
 		if (((execve(buf, av, env)) == -1) && !path)
 		{
 			perror("");
+			free(all);
 			return;
 		}
 		if (execve(all, av, NULL) == -1)
 		{
 			perror("");
+			free(all);
 			if (feof(stdin))
 				exit(EXIT_SUCCESS);
 		}
+		free(path);
+		free(all);
 	}
 	else
 		wait(NULL);
-
 }

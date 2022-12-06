@@ -30,7 +30,6 @@ char **split_line(char *buff)
  * @tokens: arguments in user input
  *
  */
-
 void freetoken(char **tokens)
 {
 	int i;

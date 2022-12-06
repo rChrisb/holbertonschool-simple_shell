@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- *
- *
- *
+ * execute - execute commands
+ * @buff: command
+ * @env: path
  *
  */
 
@@ -16,4 +16,5 @@ void execute(char *buff, char **env)
 	{
 		exec(buff, tokens, env);
 	}
+	freetoken(tokens);
 }

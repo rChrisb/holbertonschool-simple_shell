@@ -21,7 +21,9 @@ char *_getline(void)
 			exit(EXIT_SUCCESS);
 		if (buf)
 			free(buf);  /*getline autmoatically allocated memory for buf*/
+		free(buf);
 		exit(EXIT_FAILURE);
 	}
+	free(buf);
 	return (buf);
 }

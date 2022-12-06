@@ -10,16 +10,16 @@
 
 int main(__attribute__((unused)) int ac, __attribute__((unused)) char *av[], char **env)
 {
-	char *buffer = NULL/*, **tokens*/;
+	char *buffer = NULL;
 
 	while (1)
 	{
 		prompt("$£$ ");
 		buffer = _getline();
-		/* tokens = split_line(buffer);*/
-		getfunc(buffer);
-
+		/*getfunc(buffer);*/
 		execute(buffer, env);
 	}
+	free(buffer);
+
 	return (0);
 }
