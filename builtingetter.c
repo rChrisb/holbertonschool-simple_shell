@@ -10,7 +10,6 @@
 int (*getfunc(char *s))(void)
 {
 	builtin builts[] = {
-		{"exit", _exitshell},
 		{"env", _printenv},
 		{NULL, NULL}
 	};

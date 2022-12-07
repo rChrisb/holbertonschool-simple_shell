@@ -1,17 +1,6 @@
 #include "main.h"
 
 /**
- * _exitshell - exit the new shell
- *
- * Return: exit code
- */
-
-int _exitshell(void)
-{
-	return (-2);
-}
-
-/**
  * _printenv - prints environment
  *
  * Return: 0

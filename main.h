@@ -34,6 +34,7 @@ char **split_line(char *buff);
 char *searchpath(char *buffer, char *path);
 void freetoken(char **tokens);
 int ignorespace(char *buffer);
-char **execute(char *buff, char **env);
+void execute(char *buff, char **env);
+int _strcmp(char *s1, char *s2);
 
 #endif

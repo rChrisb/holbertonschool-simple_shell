@@ -10,7 +10,7 @@
 
 int main(int ac, char *av[], char **env)
 {
-	char *buffer = NULL, **tokens;
+	char *buffer = "";
 
 	(void)ac;
 	(void)av;
@@ -24,17 +24,10 @@ int main(int ac, char *av[], char **env)
 			free(buffer);
 			exit(EXIT_SUCCESS);
 		}
-		while ((*buffer != '\0') && *buffer == ' ')
-		{
-			buffer++;
-		}
-		if (buffer == NULL)
-		{
-			free(buffer);
-			freetoken(tokens);
-		}
+		if ((strcmp(buffer, "exit") == 0))
+			exit(0);
 		getfunc(buffer);
-		tokens = execute(buffer, env);
+		execute(buffer, env);
 		free(buffer);
 	}
 	return (0);
