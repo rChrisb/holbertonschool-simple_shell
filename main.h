@@ -15,7 +15,6 @@
  * @function: function to execute
  *
  */
-
 typedef struct builtin
 {
 	char *command;
@@ -28,13 +27,13 @@ int _exitshell(void);
 int _printenv(void);
 
 
-void prompt(char p[10]);
+void prompt(char p[6]);
 char *_getline(void);
 void exec(char *buf, char *av[], char **env);
 char **split_line(char *buff);
 char *searchpath(char *buffer, char *path);
 void freetoken(char **tokens);
 int ignorespace(char *buffer);
-void execute(char *buff, char **env);
+char **execute(char *buff, char **env);
 
 #endif

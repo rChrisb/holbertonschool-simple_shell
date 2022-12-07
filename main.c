@@ -10,24 +10,34 @@
 
 int main(int ac, char *av[], char **env)
 {
-	char *buffer = NULL/*, **tokens*/;
+	char *buffer = NULL, **tokens;
 
 	(void)ac;
 	(void)av;
 
 	while (1)
 	{
-	prompt("$£$ ");
-	buffer = _getline();
-	/* tokens = split_line(buffer);*/
-	while ((*buffer != '\0') && *buffer == ' ')
-		buffer++;
-
-	if ((strcmp(buffer, "exit") == 0) || (strcmp(buffer, "env") == 0))
+		prompt("$£$ ");
+		buffer = _getline();
+		if (feof(stdin))
+		{
+			free(buffer);
+			exit(EXIT_SUCCESS);
+		}
+		while ((*buffer != '\0') && *buffer == ' ')
+		{
+			buffer++;
+		}
+		if (buffer != NULL)
+		{
 			getfunc(buffer);
-
-	execute(buffer, env);
+			tokens = execute(buffer, env);
+		}
+		else
+		{
+			free(buffer);
+			freetoken(tokens);
+		}
 	}
-	free(buffer);
 	return (0);
 }

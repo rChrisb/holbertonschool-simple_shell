@@ -7,7 +7,7 @@
  *
  */
 
-void execute(char *buff, char **env)
+char **execute(char *buff, char **env)
 {
 	char **tokens = NULL;
 
@@ -15,10 +15,8 @@ void execute(char *buff, char **env)
 	if (tokens[0])
 	{
 		exec(buff, tokens, env);
-		/*freetoken(tokens);*/
-		return;
+		free(tokens);
+		return (tokens);
 	}
-	freetoken(tokens);
-
-	/*builtin*/
+	return(NULL);
 }

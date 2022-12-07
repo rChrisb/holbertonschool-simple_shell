@@ -54,17 +54,11 @@ int ignorespace(char *buffer)
 	return (len);
 }
 
-
-
-
-
-
 /**
  * freetoken - free arguments
  * @tokens: arguments in user input
  *
  */
-
 void freetoken(char **tokens)
 {
 	int i;
