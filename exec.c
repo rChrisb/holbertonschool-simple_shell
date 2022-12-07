@@ -23,7 +23,6 @@ void exec(char *buf, char *av[], char **env)
 	{
 		path = strdup(path);
 		all = searchpath(buf, path);
-		free(buf);
 		if (((execve(all, av, env) == -1)) && !path)
 		{
 			free(all);
@@ -42,7 +41,6 @@ void exec(char *buf, char *av[], char **env)
 			return;
 		}
 		free(all);
-		free(path);
 	}
 	else
 		wait(NULL);

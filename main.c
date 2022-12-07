@@ -28,17 +28,14 @@ int main(int ac, char *av[], char **env)
 		{
 			buffer++;
 		}
-		if (buffer != NULL)
-		{
-			getfunc(buffer);
-			tokens = execute(buffer, env);
-			free(buffer);
-		}
-		else
+		if (buffer == NULL)
 		{
 			free(buffer);
 			freetoken(tokens);
 		}
+		getfunc(buffer);
+		tokens = execute(buffer, env);
+		free(buffer);
 	}
 	return (0);
 }
