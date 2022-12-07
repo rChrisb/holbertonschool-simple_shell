@@ -9,7 +9,7 @@
 char **split_line(char *buff)
 {
 	int /*bufsize = 64,*/ pos = 0;
-	char **tokens = calloc((ignorespace(buff) + 1) , sizeof(char *));
+	char **tokens = calloc((ignorespace(buff) + 1), sizeof(char *));
 	char *token;
 
 	token = strtok(buff, " ");
@@ -69,3 +69,4 @@ void freetoken(char **tokens)
 		free(tokens);
 	}
 }
+
