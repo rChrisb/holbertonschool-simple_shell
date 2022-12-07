@@ -25,7 +25,10 @@ int main(int ac, char *av[], char **env)
 			exit(EXIT_SUCCESS);
 		}
 		if ((strcmp(buffer, "exit") == 0))
+		{
+			free(buffer);
 			exit(0);
+		}
 		getfunc(buffer);
 		execute(buffer, env);
 		free(buffer);
