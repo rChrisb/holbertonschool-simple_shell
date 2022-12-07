@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
+ * searchpath - puts user input after the found path
+ * @buffer: user input
+ * @path: path of the command
  *
- *
- *
- *
+ * Return: a copy of the user input
  */
 
 char *searchpath(char *buffer, char *path)

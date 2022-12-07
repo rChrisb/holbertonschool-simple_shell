@@ -4,16 +4,15 @@
  * exec - excutes user input
  * @buf: user input
  * @av: tokens
- *
+ * @env: gloval environment
  */
 void exec(char *buf, char *av[], char **env)
 {
 	pid_t pid;
 	char *all = NULL, *path;
 
-	pid = fork();
 	path = getenv("PATH");
-
+	pid = fork();
 	if (pid == -1)
 	{
 		perror("Error");
@@ -24,21 +23,26 @@ void exec(char *buf, char *av[], char **env)
 	{
 		path = strdup(path);
 		all = searchpath(buf, path);
-		if (((execve(buf, av, env)) == -1) && !path)
+		free(buf);
+		if (((execve(all, av, env) == -1)) && !path)
 		{
-			perror("");
 			free(all);
+			perror("");
 			return;
 		}
-		if (execve(all, av, NULL) == -1)
+		if (execve(all, av, env) == -1)
 		{
 			perror("");
 			free(all);
 			if (feof(stdin))
+			{
+				free(buf);
 				exit(EXIT_SUCCESS);
+			}
+			return;
 		}
-		free(path);
 		free(all);
+		free(path);
 	}
 	else
 		wait(NULL);

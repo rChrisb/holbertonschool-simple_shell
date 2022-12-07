@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * execute - execute commands
- * @buff: command
- * @env: path
+ * execute - executes commands and bultins
+ * @buff: user input
+ * @env: global environment
  *
  */
 
-void execute(char *buff, char **env)
+char **execute(char *buff, char **env)
 {
 	char **tokens = NULL;
 
@@ -15,6 +15,8 @@ void execute(char *buff, char **env)
 	if (tokens[0])
 	{
 		exec(buff, tokens, env);
+		free(tokens);
+		return (tokens);
 	}
-	freetoken(tokens);
+	return(NULL);
 }

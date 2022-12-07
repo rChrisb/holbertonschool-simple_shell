@@ -9,8 +9,8 @@
 
 char **split_line(char *buff)
 {
-	int bufsize = 64, pos = 0;
-	char **tokens = malloc(sizeof(char *) * bufsize);
+	int /*bufsize = 64,*/ pos = 0;
+	char **tokens = malloc(sizeof(char *) * ignorespace(buff) + 1);
 	char *token;
 
 	token = strtok(buff, " ");
@@ -26,7 +26,36 @@ char **split_line(char *buff)
 }
 
 /**
- * freetokens - free arguments
+ * ignorespace - ignores spaces
+ * @buffer: user input
+ *
+ * Return: length of input without spaces
+ */
+
+int ignorespace(char *buffer)
+{
+	int i = 0, len = 0, space = 0;
+
+	while (buffer && buffer[i])
+	{
+		if (buffer[i] == '\n' || buffer[i] == ' ' || buffer[i] == '\t')
+		{
+			if (buffer[i] == '\n')
+				buffer[i] = '\0';
+			space = 0;
+		}
+		else if (space == 0)
+		{
+			space = 1;
+			len++;
+		}
+		i++;
+	}
+	return (len);
+}
+
+/**
+ * freetoken - free arguments
  * @tokens: arguments in user input
  *
  */
