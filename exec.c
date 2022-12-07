@@ -6,7 +6,7 @@
  * @av: tokens
  * @env: gloval environment
  */
-void exec(char *buf, char *av[], char **env)
+void exec(char *buf, char **av, char **env)
 {
 	pid_t pid;
 	char *all = NULL, *path;
@@ -16,16 +16,18 @@ void exec(char *buf, char *av[], char **env)
 	if (pid == -1)
 	{
 		perror("Error");
-		free(all);
 		return;
 	}
 	if (pid == 0)
 	{
 		path = strdup(path);
-		all = searchpath(buf, path);
+		all = searchpath(av[0], path);
+
 		if (((execve(all, av, env) == -1)) && !path)
 		{
 			free(all);
+			free(buf);
+			free(av);
 			perror("");
 			return;
 		}

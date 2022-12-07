@@ -14,7 +14,6 @@ char *_getline(void)
 
 
 	val = getline(&buf, &n, stdin);
-	/*buf[strlen(buf) - 1] = '\0';*/
 
 	if (val == -1)
 	{
@@ -25,8 +24,13 @@ char *_getline(void)
 		}
 		if (buf)
 			free(buf);  /*getline autmoatically allocated memory for buf*/
-		free(buf);
 		exit(EXIT_FAILURE);
-}
+	}
+	if (val == 0)
+	{
+		free(buf);
+		return (NULL);
+	}
+	buf[val - 1] = '\0';
 	return (buf);
 }

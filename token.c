@@ -6,11 +6,10 @@
  *
  * Return: tokenized user input
  */
-
 char **split_line(char *buff)
 {
 	int /*bufsize = 64,*/ pos = 0;
-	char **tokens = malloc(sizeof(char *) * ignorespace(buff) + 1);
+	char **tokens = calloc((ignorespace(buff) + 1) , sizeof(char *));
 	char *token;
 
 	token = strtok(buff, " ");
@@ -20,8 +19,6 @@ char **split_line(char *buff)
 		pos++;
 		token = strtok(NULL, " ");
 	}
-	tokens[pos] = NULL;
-
 	return (tokens);
 }
 

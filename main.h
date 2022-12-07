@@ -23,7 +23,6 @@ typedef struct builtin
 
 extern char **environ;
 int (*getfunc(char *s))(void);
-int _exitshell(void);
 int _printenv(void);
 
 
@@ -34,6 +33,6 @@ char **split_line(char *buff);
 char *searchpath(char *buffer, char *path);
 void freetoken(char **tokens);
 int ignorespace(char *buffer);
-char **execute(char *buff, char **env);
+void execute(char *buff, char **env);
 
 #endif

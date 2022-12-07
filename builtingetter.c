@@ -11,7 +11,6 @@ int (*getfunc(char *s))(void)
 {
 	builtin builts[] = {
 		{"env", _printenv},
-		{"exit", _exitshell},
 		{NULL, NULL}
 	};
 	int i = 0;
