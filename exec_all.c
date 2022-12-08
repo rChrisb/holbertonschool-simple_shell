@@ -7,19 +7,21 @@
  *
  */
 
-void execute(char *buff, char **env)
+int execute(char *buff, char **env)
 {
 	char **tokens = NULL;
+	int status;
 
 	tokens = split_line(buff);
-	if (tokens[0])
+	if (tokens[0] && (strcmp(tokens[0], "exit")) != 0)
 	{
-		exec(buff, tokens, env);
+		status = exec(tokens[0], tokens, env);
 		free(tokens);
-		return;
+		return (status);
 	}
 	else
 	{
 		free(tokens);
 	}
+	return (0);
 }

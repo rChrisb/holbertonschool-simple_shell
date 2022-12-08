@@ -11,6 +11,7 @@
 int main(int ac, char *av[], char **env)
 {
 	char *buffer = "";
+	int error;
 
 	(void)ac;
 	(void)av;
@@ -25,9 +26,14 @@ int main(int ac, char *av[], char **env)
 			exit(EXIT_SUCCESS);
 		}
 		if ((strcmp(buffer, "exit") == 0))
+		{
+			free(buffer);
 			exit(0);
+		}
 		getfunc(buffer);
-		execute(buffer, env);
+		error = execute(buffer, env);
+		if (error == -1)
+			exit(127);
 		free(buffer);
 	}
 	return (0);
