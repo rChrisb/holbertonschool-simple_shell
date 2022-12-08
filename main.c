@@ -11,6 +11,7 @@
 int main(int ac, char *av[], char **env)
 {
 	char *buffer = "";
+	int error;
 
 	(void)ac;
 	(void)av;
@@ -30,7 +31,9 @@ int main(int ac, char *av[], char **env)
 			exit(0);
 		}
 		getfunc(buffer);
-		execute(buffer, env);
+		error = execute(buffer, env);
+		if (error == -1)
+			exit(2);
 		free(buffer);
 	}
 	return (0);
