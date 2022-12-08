@@ -1,0 +1,87 @@
+.TH Simple Shell Holberton School
+.SH NAME
+.B Simple Shell - Unix command-line interpreter
+
+.SH SYNOPSIS
+
+.B To start the program, the command ./hsh is typed.
+
+.B Header files
+	#include <sys/wait.h>
+	#include <unistd.h>
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include <string.h>
+	#include <sys/types.h>
+	#include <sys/stat.h>
+
+
+
+.SH DESCRIPTION
+The Shell provides a command line user interface for Unix-like operating systems. It is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
+Generally, a shell is a program that executes other programs in response to text commands.
+
+.SH Interactive Mode
+
+.B Example
+
+chrisbikoy@PC_Bikoy:~$ ./hsh
+$£$ ls
+README.md        builtinsoptions.c  exec_all.c  hsh     main.h    searchpath.c
+builtingetter.c  exec.c             getline.c   main.c  prompt.c  token.c
+$£$ exit
+chrisbikoy@PC_Bikoy:~$
+
+
+.SH Non-interactive Mode
+
+.B Example
+
+chrisbikoy@PC_Bikoy:~$ echo "/bin/ls" | ./hsh
+README.md        builtinsoptions.c  exec_all.c  hsh     main.h    searchpath.c
+builtingetter.c  exec.c             getline.c   main.c  prompt.c  token.c
+chrisbikoy@PC_Bikoy:~$
+
+
+
+.SH Return Value
+On success the program always returns 0.
+Otherwise, the program returns a negative value.
+
+
+
+.SH OPTIONS
+When typing a command we can add options preceded by a space and a hyphen
+
+
+
+.SH EXAMPLES
+[command] [options]
+ls
+ls -l
+ls -al /var
+/bin/ls /var
+
+
+
+.SH BUILT-INS COMMANDS
+
+.B exit
+
+	Exits the shell
+.B env
+
+	Prints the variables  from the current environment
+
+
+ The builtins are functions included in the shell itself and don’t need any other program to run them.
+
+
+
+.SH BUGS
+No bug
+
+
+
+.SH AUTHORS
+.B Alina Jin, Chris Bikoy
