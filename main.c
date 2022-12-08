@@ -33,7 +33,7 @@ int main(int ac, char *av[], char **env)
 		getfunc(buffer);
 		error = execute(buffer, env);
 		if (error == -1)
-			exit(127);
+			exit(2);
 		free(buffer);
 	}
 	return (0);
