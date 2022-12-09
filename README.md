@@ -104,7 +104,7 @@ chrisbikoy@PC_Bikoy:~$
 -------------------------
 # Flowchart
 
-![img](https://github.com/rChrisb/holbertonschool-simple_shell/blob/main/Untitled%20Diagram.drawio)
+![img]([https://github.com/rChrisb/holbertonschool-simple_shell/blob/main/Untitled%20Diagram.drawio](https://github.com/rChrisb/holbertonschool-simple_shell/blob/main/Untitled%20Diagram.drawio.png))
 
 -------------------------
 ## Tasks
