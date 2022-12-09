@@ -102,6 +102,11 @@ chrisbikoy@PC_Bikoy:~$
 | builtinsoptions.c | Builtins to be executed.|
 
 -------------------------
+# Flowchart
+
+![img](https://github.com/rChrisb/holbertonschool-simple_shell/blob/main/Untitled%20Diagram.drawio)
+
+-------------------------
 ## Tasks
 
 ### 0. README, man, AUTHORS
