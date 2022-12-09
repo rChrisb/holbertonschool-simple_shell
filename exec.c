@@ -5,6 +5,8 @@
  * @buf: user input
  * @av: tokens
  * @env: gloval environment
+ *
+ * Return: 0 on success, -1 on failure
  */
 int exec(char *buf, char **av, char **env)
 {
