@@ -4,7 +4,7 @@
  * execute - executes commands and bultins
  * @buff: user input
  * @env: global environment
- *
+ * Return: 0 il no argument, otherwise returns the value of execve call
  */
 
 int execute(char *buff, char **env)
