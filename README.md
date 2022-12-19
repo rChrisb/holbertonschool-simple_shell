@@ -77,11 +77,11 @@ chrisbikoy@PC_Bikoy:~$
 ```
 
 ## Execute the man page
-> `sudo mkdir /usr/local/man/man1`
-> `sudo cp man_1_simple_shell.1 /usr/local/man/man1`
-> `sudo gzip /usr/local/man/man1/man_1_simple_shell.1`
-> `sudo mandb`
-> `man man_1_simple_shell`
+* > `sudo mkdir /usr/local/man/man1`
+* > `sudo cp man_1_simple_shell.1 /usr/local/man/man1`
+* > `sudo gzip /usr/local/man/man1/man_1_simple_shell.1`
+* > `sudo mandb`
+* > `man man_1_simple_shell`
 
 ## Check memory leaks
 > `valgrind --leak-check=full --show-leak-kinds=all -v ./hsh`
