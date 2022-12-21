@@ -170,4 +170,4 @@ Simple shell 0.4 +
 - `Chris Bikoy` - [rChrisb](https://github.com/rChrisb).
 - `Alina Jin` - [ali-jin](https://github.com/ali-jin).
 
-## <p align=right>`Score: 91.67/100`</p>
+
