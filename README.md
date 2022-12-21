@@ -1,20 +1,20 @@
-# Simple Shell Project
+# <p align=center><p align=center>`Simple Shell Project`</p>
 
 ![img](https://hackernoon.com/images/RehfvhVduMecnl6qtW8ev7jN1H72-ran482647.jpg)
 
-## Description
+## <p align=center>`Description`</p>
 This repository is a project during the first year of **```Holberton School```**. This is our second group project. In this project, we are recoding our own shell.
 
-## Resources
-### Read or Watch:
+## <p align=center>`Resources`</p>
+### <p align=center>Read or Watch:
 - [Unix shell](https://en.wikipedia.org/wiki/Unix_shell)
 - [Thompson shell](https://en.wikipedia.org/wiki/Thompson_shell)
 - [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson)
 
-## Requirements
+## <p align=center>`Requirements`</p>
 > All files were created and compiled on `Ubuntu 20.04 LTS`using `GCC`, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
 
-### List of allowed functions and system calls
+### <p align=center>List of allowed functions and system calls</p>
 - access (man 2 access)
 - chdir (man 2 chdir)
 - close (man 2 close)
@@ -52,13 +52,13 @@ This repository is a project during the first year of **```Holberton School```**
 - wait4 (man 2 wait4)
 - write (man 2 write)
 
-## Compilation
+## <p align=center>`Compilation`</p>
 > `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hshs`
 
-## Function returns
+## <p align=center>`Function returns`</p>
 On success the program always returns 0. Otherwise, the program returns a negative value.
 
-## Examples:
+## <p align=center>`Examples`:</p>
 ### interactive
 ```c
 chrisbikoy@PC_Bikoy:~$ ./hsh
@@ -76,18 +76,18 @@ builtingetter.c  exec.c             getline.c   main.c  prompt.c  token.c
 chrisbikoy@PC_Bikoy:~$
 ```
 
-## Execute the man page
+## <p align=center>`Execute the man page`</p>
 * > `sudo mkdir /usr/local/man/man1`
 * > `sudo cp man_1_simple_shell.1 /usr/local/man/man1`
 * > `sudo gzip /usr/local/man/man1/man_1_simple_shell.1`
 * > `sudo mandb`
 * > `man man_1_simple_shell`
 
-## Check memory leaks
+## <p align=center>`Check memory leaks`</p>
 > `valgrind --leak-check=full --show-leak-kinds=all -v ./hsh`
 
 -------------------------
-## Files Usage
+## <p align=center>`Files Usage`</p>
 | File Name | Description |
 |:----------:|:----------:|
 | main.c | Tha main called all the functions to execute the shell. |
@@ -102,25 +102,25 @@ chrisbikoy@PC_Bikoy:~$
 | builtinsoptions.c | Builtins to be executed.|
 
 -------------------------
-# Flowchart
+# <p align=center>`Flowchart`</p>
 
 ![img](https://github.com/rChrisb/holbertonschool-simple_shell/blob/main/Untitled%20Diagram.drawio.png)
 
 -------------------------
-## Tasks
+## <p align=center>`Tasks`</p></p>
 
-### 0. README, man, AUTHORS
+### <p align=center>`0. README, man, AUTHORS`</p>
 - Write a `README`
 - Write a `man` for your shell.
 - You should have an `AUTHORS` file at the root of your repository, listing all individuals having contributed content to the repository.
  Format, see [Docker](https://github.com/moby/moby/blob/master/AUTHORS)
 
 -----------------------------
-### 1. Betty would be proud
+### <p align=center>`1. Betty would be proud`</p>
 Write a beautiful code that passes the Betty checks
 
 -----------------------------
-### 2. Simple shell 0.1
+### <p align=center>`2. Simple shell 0.1`</p>
 Write a UNIX command line interpreter.
 - Usage: `simple_shell`
 
@@ -142,30 +142,32 @@ You don’t have to:
 `execve` will be the core part of your Shell, don’t forget to pass the environ to it…
 
 -----------------------------
-### 3. Simple shell 0.2
+### <p align=center>`3. Simple shell 0.2`</p>
 Simple shell 0.1 +
 - Handle command lines with arguments
 
 -----------------------------
-### 4. Simple shell 0.3
+### <p align=center>`4. Simple shell 0.3`</p>
 Simple shell 0.2 +
 - Handle the `PATH`
 - `fork` must not be called if the command doesn’t exist
 
 -----------------------------
-### 5. Simple shell 0.4
+### <p align=center>`5. Simple shell 0.4`</p>
 Simple shell 0.3 +
 - Implement the `exit` built-in, that exits the shell
 - Usage: `exit`
 - You don’t have to handle any argument to the built-in `exit`
 
 -----------------------------
-### 6. Simple shell 1.0
+### <p align=center>`6. Simple shell 1.0`</p>
 Simple shell 0.4 +
 - Implement the `env` built-in, that prints the current environment
 
 -----------------------------
-# Authors
+# `Authors`
 
 - `Chris Bikoy` - [rChrisb](https://github.com/rChrisb).
 - `Alina Jin` - [ali-jin](https://github.com/ali-jin).
+
+## <p align=right>`Score: 91.67/100`</p>
